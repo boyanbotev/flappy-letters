@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class Collide : MonoBehaviour
 {
-    public static event System.Action OnPlayerCollision;
+    public static event System.Action<Collider2D> OnPlayerCollision;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        OnPlayerCollision?.Invoke(collision);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.GetComponentInParent<Move>())
-        {
-            OnPlayerCollision?.Invoke();
-        }
+        OnPlayerCollision?.Invoke(collision.collider);
     }
 }
