@@ -35,7 +35,6 @@ public class Progress : MonoBehaviour
     private void Awake()
     {
         text = this.gameObject.GetComponent<TextMeshProUGUI>();
-        Debug.Log(text.text);
     }
 
     private void Start()
