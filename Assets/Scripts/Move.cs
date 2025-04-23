@@ -6,7 +6,6 @@ public class Move : MonoBehaviour
     [SerializeField] private Vector3 direction = Vector3.left;
     void Update()
     {
-        // move to the left
         transform.position += direction * Time.deltaTime * speed;
     }
 }
